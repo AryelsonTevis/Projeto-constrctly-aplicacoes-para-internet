@@ -1,41 +1,41 @@
 <?php
-class DatabaseConnection
+
+class MysqlSingleton
 {
-    private static ?DatabaseConnection $instance = null;
-    private $dsn = 'mysql:host=localhost;dbname=projeto';
+    private static ?MysqlSingleton $instance = null;
+    private $dsn = 'mysql:host=localhost;dbname=constructly';
     private $usuario = "root";
     private $senha = "";
-    private $options=null;
+    private $options = null;
     private $conn = null;
 
-    private function __construct() {
-        if ($this->conn==null) {
+    private function __construct()
+    {
+        if ($this->conn == null) {
             $this->conn = new PDO($this->dsn, $this->usuario, $this->senha, $this->options);
         }
-        
-        
     }
 
     public static function getInstance()
     {
         if (self::$instance == null) {
-            self::$instance = new DatabaseConnection();
+            self::$instance = new MysqlSingleton();
         }
 
         return self::$instance;
     }
 
-    
-    public function query( $sql)
-    {
-        
 
-        if ($this->conn != null) {
-            $sth = $this->conn->prepare($sql);
-            $sth->execute();
+    public function executar($query, $param = array())
+    {
+
+
+        if ($this->conn) {
+            $sth = $this->conn->prepare($query);
+
+
+            $sth->execute($param);
             return $sth->fetchAll(PDO::FETCH_ASSOC);
-            
         }
-        return null;
     }
 }

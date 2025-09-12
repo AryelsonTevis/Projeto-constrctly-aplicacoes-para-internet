@@ -1,2 +1,9 @@
-<?php print_r($_GET["path"]);
- echo "<br/>teste";?>
+<?php
+include "generic/Autoload.php";
+
+use generic\Controller;
+
+if (isset($_GET["param"])) {
+    $controller = new Controller();
+    $controller->verificarChamadas($_GET["param"]);
+}
