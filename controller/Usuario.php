@@ -31,7 +31,7 @@ class Usuario
         $endereco = $_POST["endereço_cobrança"];
         $service = new UsuarioService();
         $resultado = $service->inserir($nome, $email, $telefone, $cpf, $senha_hash, $endereco);
-        header("location: /trabalho_patrick/usuario/lista?info=1");
+        header("location: /trabalho_patrick/usuario/listar?info=1");
     }
     public function formulario()
     {

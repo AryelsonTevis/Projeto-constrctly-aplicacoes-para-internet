@@ -9,6 +9,7 @@ class MysqlSingleton
     private $options = null;
     private $conn = null;
 
+
     private function __construct()
     {
         if ($this->conn == null) {
@@ -32,7 +33,9 @@ class MysqlSingleton
 
         if ($this->conn) {
             $sth = $this->conn->prepare($query);
-
+            foreach ($param as $k => $v) {
+                $sth->bindValue($k, $v);
+            }
 
             $sth->execute($param);
             return $sth->fetchAll(PDO::FETCH_ASSOC);
