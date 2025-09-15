@@ -10,8 +10,10 @@ class Controller
         $this->arrayChamadas = [
             "usuario/listar" => new Acao("Usuario", "listar"),
             "usuario/formulario" => new Acao("Usuario", "formulario"),
-            "usuario/formularioalternar" => new Acao("Usuario", "alternarform"),
+            "usuario/formularioalterar" => new Acao("Usuario", "alterarform"),
             "usuario/inserir" => new Acao("Usuario", "inserir")
+
+
         ];
     }
 

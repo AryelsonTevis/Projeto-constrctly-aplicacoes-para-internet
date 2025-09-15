@@ -15,7 +15,7 @@ class UsuarioDAO extends MysqlFactory implements IUsuarioDAO
     }
     public function listarId($id)
     {
-        $sql = "select usuario_id,nome,email,numero_telefone,CPF_CNPJ,senha,endereço_cobrança from usuarios where usuario_id=:id";
+        $sql = "select nome,email,numero_telefone,CPF_CNPJ,senha,endereço_cobrança from usuarios where usuario_id=:id";
         $param = [":id" => $id];
         $retorno = $this->banco->executar($sql, $param);
         return $retorno;

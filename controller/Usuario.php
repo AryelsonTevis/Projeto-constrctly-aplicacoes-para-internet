@@ -43,6 +43,24 @@ class Usuario
         $id = $_GET["usuario_id"];
         $service = new UsuarioService();
         $resultado = $service->listarId($id);
-        $this->template->layout("\\public\\usuario\\form.php", $resultado);
+
+        $this->template->layout("\\public\\usuario\\formalternar.php", $resultado);
+    }
+    public function alterar()
+    {
+
+        $id = $_GET["usuario_id"];
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+        $telefone = $_POST["telefone"];
+        $cpf = $_POST["cpf"];
+        $senha = $_POST["senha"];
+        $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+        $endereco = $_POST["endereço_cobrança"];
+        $service = new UsuarioService();
+
+        $service = new UsuarioService();
+        $resultado = $service->alterar($id, $nome, $email, $telefone, $cpf, $senha_hash, $endereco);
+        header("location: /trabalho_patrick/usuario/listar?info=1");
     }
 }

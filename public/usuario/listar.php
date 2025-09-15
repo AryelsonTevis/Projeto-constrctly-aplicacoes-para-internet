@@ -18,7 +18,7 @@
         <td>
             <?= $p["endereço_cobrança"] ?>
         </td>
-        <td><a href="/trabalho_patrick/usuario/formularioalterar?id=<? echo $p['id']; ?>">alterar</a></td>
+        <td><a href="/trabalho_patrick/usuario/formularioalterar?id=<? echo $p['usuario_id']; ?>">alterar</a></td>
 
     </tr>
     <?php
