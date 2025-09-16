@@ -8,3 +8,4 @@ if (isset($_GET["param"])) {
     $controller = new Controller();
     $controller->verificarChamadas($_GET["param"]);
 }
+?>

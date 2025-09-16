@@ -1,33 +1,23 @@
-<form action="/trabalho_patrick/usuario/alterar" method="post">
-    <?php
-    if ($parametro != null) {
-    ?>
-    <input type="hidden" name="usuario_id" value="<?= $parametro[0]["usuario_id"] ?>" />
-    <?php
-    }
-    ?>
-    <label>Nome:</label>
-    <input type="text" name="nome" value="<?= ($parametro != null) ? $parametro[0]["nome"] : "" ?>" />
-    <br />
+<?php foreach ($parametro as $p) { ?>
+<tr>
+    <td>
+        <form action="/trabalho_patrick/usuario/alterar" method="post">
+            <input type="hidden" name="usuario_id" value="<?= $p['usuario_id']; ?>">
 
-
-    <label>Email:</label>
-    <input type="text" name="email" value="<?= ($parametro != null) ? $parametro[0]["email"] : "" ?>" />
-    <br />
-    <label>Numer de telefone:</label>
-    <input type="text" name="telefone" value="<?= ($parametro != null) ? $parametro[0]["numero_telefone"] : "" ?>" />
-    <br />
-    <label>CPF:</label>
-    <input type="text" name="cpf" value="<?= ($parametro != null) ? $parametro[0]["CPF_CNPJ"] : "" ?>" />
-    <br />
-    <label>Senha:</label>
-    <input type="password" name="senha" value="<?= ($parametro != null) ? $parametro[0]["senha"] : "" ?>" />
-    <br />
-    <label>Endereço:</label>
-    <input type="text" name="endereço_cobrança"
-        value="<?= ($parametro != null) ? $parametro[0]["endereço_cobrança"] : "" ?>" />
-    <br />
-
-    <input type="submit" value="Enviar">
-
-</form>
+            <input type="text" name="nome" value="<?= $p['nome']; ?>">
+            <br>
+            <input type="text" name="email" value="<?= $p['email']; ?>">
+            <br>
+            <input type="text" name="numero_telefone" value="<?= $p['numero_telefone']; ?>">
+            <br>
+            <input type="text" name="CPF_CNPJ" value="<?= $p['CPF_CNPJ']; ?>">
+            <br>
+            <input type="password" name="senha" value="<?= $p['senha']; ?>">
+            <br>
+            <input type="text" name="endereço_cobrança" value="<?= $p['endereço_cobrança']; ?>">
+            <br>
+            <input type="submit" value="alterar" class="buton">
+        </form>
+    </td>
+</tr>
+<?php } ?>

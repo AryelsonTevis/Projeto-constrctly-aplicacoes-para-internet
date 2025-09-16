@@ -15,7 +15,7 @@ class UsuarioDAO extends MysqlFactory implements IUsuarioDAO
     }
     public function listarId($id)
     {
-        $sql = "select nome,email,numero_telefone,CPF_CNPJ,senha,endereço_cobrança from usuarios where usuario_id=:id";
+        $sql = "select * from usuarios where usuario_id=:id";
         $param = [":id" => $id];
         $retorno = $this->banco->executar($sql, $param);
         return $retorno;
@@ -37,17 +37,26 @@ class UsuarioDAO extends MysqlFactory implements IUsuarioDAO
     }
     public function alterar($id, $nome, $email, $telefone, $cpf, $senha, $endereco)
     {
-        $sql = "UPDATE usuarios set nome = :nome, email= :email, numero_telefone = :telefone, CPF_CNPJ = :cpf, senha = :senha, endereço_cobrança = :endereço_cobrança where usuario_id = :usuario_id";
+        $sql = "UPDATE usuarios set nome = :nome, email= :email, numero_telefone = :telefone, CPF_CNPJ = :cpf, senha = :senha, endereço_cobrança = :endereco_cobranca where usuario_id = :usuario_id";
         $param = [
-            ":usuario_id" => $id,
             ":nome" => $nome,
             ":email" => $email,
             ":telefone" => $telefone,
             ":cpf" => $cpf,
             ":senha" => $senha,
-            ":endereço_cobrança" => $endereco
+            ":endereco_cobranca" => $endereco,
+            ":usuario_id" => $id
         ];
 
+        $retorno = $this->banco->executar($sql, $param);
+        return $retorno;
+    }
+    public function apagar($id)
+    {
+        $sql = "delete from usuarios where usuario_id = :usuario_id";
+        $param = [
+            ":usuario_id" => $id
+        ];
         $retorno = $this->banco->executar($sql, $param);
         return $retorno;
     }

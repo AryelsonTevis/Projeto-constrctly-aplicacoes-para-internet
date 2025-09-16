@@ -18,8 +18,12 @@ class UsuarioService extends UsuarioDAO
     {
         return parent::alterar($id, $nome, $email, $telefone, $cpf, $senha, $endereco);
     }
-    public function listarid($id)
+    public function listarId($id)
     {
-        return parent::listarid($id);
+        return parent::listarId($id);
+    }
+    public function apagar($id)
+    {
+        return parent::apagar($id);
     }
 }

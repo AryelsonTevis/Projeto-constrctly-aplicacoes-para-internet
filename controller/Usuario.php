@@ -20,6 +20,7 @@ class Usuario
         $resultado = $service->listarUsuario();
         $this->template->layout("\\public\\usuario\\listar.php", $resultado);
     }
+
     public function inserir()
     {
         $nome = $_POST["nome"];
@@ -40,27 +41,33 @@ class Usuario
     }
     public function alterarForm()
     {
-        $id = $_GET["usuario_id"];
+
+        $id = $_GET['id'];
         $service = new UsuarioService();
         $resultado = $service->listarId($id);
 
-        $this->template->layout("\\public\\usuario\\formalternar.php", $resultado);
+        $this->template->layout("\\public\\usuario\\formalterar.php", $resultado);
     }
     public function alterar()
     {
 
-        $id = $_GET["usuario_id"];
+        $id = $_POST["usuario_id"];
         $nome = $_POST["nome"];
         $email = $_POST["email"];
-        $telefone = $_POST["telefone"];
-        $cpf = $_POST["cpf"];
+        $telefone = $_POST["numero_telefone"];
+        $cpf = $_POST["CPF_CNPJ"];
         $senha = $_POST["senha"];
         $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
         $endereco = $_POST["endereço_cobrança"];
         $service = new UsuarioService();
-
-        $service = new UsuarioService();
         $resultado = $service->alterar($id, $nome, $email, $telefone, $cpf, $senha_hash, $endereco);
+        header("location: /trabalho_patrick/usuario/listar?info=1");
+    }
+    public function apagar()
+    {
+        $id = $_GET["id"];
+        $service = new UsuarioService();
+        $resultado = $service->apagar($id);
         header("location: /trabalho_patrick/usuario/listar?info=1");
     }
 }

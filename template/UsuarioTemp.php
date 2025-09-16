@@ -17,6 +17,7 @@ class UsuarioTemp implements ITemplate
     public function layout($caminho, $parametro = null)
     {
         $this->cabecalho();
+
         include $_SERVER["DOCUMENT_ROOT"] . "\\trabalho_patrick" . $caminho;
         $this->rodape();
     }
