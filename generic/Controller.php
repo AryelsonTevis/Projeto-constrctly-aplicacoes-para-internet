@@ -13,7 +13,8 @@ class Controller
             "usuario/formularioalterar" => new Acao("Usuario", "alterarForm"),
             "usuario/inserir" => new Acao("Usuario", "inserir"),
             "usuario/alterar" => new Acao("Usuario", "alterar"),
-            "usuario/apagar" => new Acao("Usuario", "apagar")
+            "usuario/apagar" => new Acao("Usuario", "apagar"),
+            "usuario/listarproprietarios" => new Acao("Usuario", "listarProprietarios")
 
 
         ];
