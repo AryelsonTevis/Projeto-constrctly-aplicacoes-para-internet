@@ -16,9 +16,16 @@ class Usuario
 
     public function listar()
     {
+
         $service = new UsuarioService();
         $resultado = $service->listarUsuario();
         $this->template->layout("\\public\\usuario\\listar.php", $resultado);
+    }
+    public function listarid()
+    {
+        $id = $_GET['id'];
+        $service = new UsuarioService();
+        $resultado = $service->listarId($id);
     }
 
     public function inserir()
@@ -69,5 +76,13 @@ class Usuario
         $service = new UsuarioService();
         $resultado = $service->apagar($id);
         header("location: /trabalho_patrick/usuario/listar?info=1");
+    }
+    public function listarPro()
+    {
+        $id = $_GET['id'];
+        $service = new UsuarioService();
+        $resultado = $service->listarPro($id);
+
+        $this->template->layout("\\public\\proprietario\\listarpro.php", $resultado);
     }
 }
