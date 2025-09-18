@@ -70,4 +70,11 @@ class Usuario
         $resultado = $service->apagar($id);
         header("location: /trabalho_patrick/usuario/listar?info=1");
     }
+    public function listarProprietarios($id)
+    {
+        $id = $_GET['id'];
+        $service = new UsuarioService();
+        $resultado = $service->inserir($id);
+        header("location: /trabalho_patrick/usuario/listarproprietarios?info=1");
+    }
 }
