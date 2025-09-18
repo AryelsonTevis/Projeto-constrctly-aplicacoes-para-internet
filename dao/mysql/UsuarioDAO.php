@@ -60,6 +60,7 @@ class UsuarioDAO extends MysqlFactory implements IUsuarioDAO
         $retorno = $this->banco->executar($sql, $param);
         return $retorno;
     }
+<<<<<<< HEAD
     public function listarPro($id)
     {
         $sql = "select p.proprietario_id, p.proprietario, p.email, p.numero_telefone, p.CPF_CNPJ, p.endereço_cobrança from usuarios as u inner join proprietarios as p on u.usuario_id =p.fk_usuarios where u.usuario_id=:usuario_id ";
@@ -68,3 +69,13 @@ class UsuarioDAO extends MysqlFactory implements IUsuarioDAO
         return $retorno;
     }
 }
+=======
+     public function listarId($id)
+    {
+        $sql = "select * from proprietarios inner join usuarios on proprietarios.fk_usuarios = usuario.:id where usuario_id=:id";
+        $param = [":id" => $id];
+        $retorno = $this->banco->executar($sql, $param);
+        return $retorno;
+    }
+}
+>>>>>>> 421158102ee9ed20bac090ce65bc4e4938cbb5ce

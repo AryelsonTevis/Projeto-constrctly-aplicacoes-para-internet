@@ -33,9 +33,15 @@
                 <?= $p["endereço_cobrança"] ?>
             </td>
 
+<<<<<<< HEAD
             <td><a href="/trabalho_patrick/usuario/formularioalterar?id=<?php echo $p['usuario_id']; ?>">alterar</a></td>
             <td><a href="/trabalho_patrick/usuario/apagar?id=<?php echo $p['usuario_id']; ?>">apagar</a></td>
             <td><a href="/trabalho_patrick/usuario/listarpro?id=<?php echo $p['usuario_id']; ?>">proprietarios</a></td>
+=======
+        <td><a href="/trabalho_patrick/usuario/formularioalterar?id=<?php echo $p['usuario_id']; ?>">alterar</a></td>
+        <td><a href="/trabalho_patrick/usuario/apagar?id=<?php echo $p['usuario_id']; ?>">apagar</a></td>
+        <td><a href="/trabalho_patrick/usuario/proprietarios?id=<?php echo $p['usuario_id']; ?>">Proprietarios</a></td>
+>>>>>>> 421158102ee9ed20bac090ce65bc4e4938cbb5ce
 
         <?php
     } ?>
