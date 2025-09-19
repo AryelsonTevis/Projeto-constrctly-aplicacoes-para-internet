@@ -1,4 +1,4 @@
-<a href="/trabalho_patrick/proprietario/formulario">Cadastrar</a>
+<a href="/projeto/proprietario/formulario">Cadastrar</a>
 <table>
     <tr>
         <th>ID</th>
@@ -35,10 +35,10 @@
         </td>
 
         <td><a href="
-    /trabalho_patrick/proprietario/formulrioalterar?id=<?php echo $p['proprietario_id']; ?>">alterar</a>
+    /projeto/proprietario/formulrioalterar?id=<?php echo $p['proprietario_id']; ?>">alterar</a>
         </td>
-        <td><a href="/trabalho_patrick/proprietario/apagar?id=<?php echo $p['proprietario_id']; ?>">apagar</a></td>
-        <td><a href="/trabalho_patrick/proprietario/listarid?id=<?php echo $p['proprietario_id']; ?>">casas</a></td>
+        <td><a href="/projeto/proprietario/apagar?id=<?php echo $p['proprietario_id']; ?>">apagar</a></td>
+        <td><a href="/projeto/proprietario/listarid?id=<?php echo $p['proprietario_id']; ?>">casas</a></td>
 
     </tr>
     <?php

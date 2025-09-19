@@ -8,7 +8,8 @@ class Controller
     public function __construct()
     {
         $this->arrayChamadas = [
-            "login" => new Acao("Usuario", "logar"),
+            "usuario/login" => new Acao("Usuario", "login"),
+            "usuario/logar" => new Acao("Usuario", "logar"),
             "usuario/listar" => new Acao("Usuario", "listar"),
             "usuario/listarid" => new Acao("Usuario", "listarid"),
             "usuario/listarpro" => new Acao("Usuario", "listarpro"),

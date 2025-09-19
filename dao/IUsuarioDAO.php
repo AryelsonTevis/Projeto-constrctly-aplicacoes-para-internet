@@ -5,6 +5,8 @@ namespace dao;
 interface IUsuarioDAO
 {
     public function listar();
+    
+    public function logar($email);
     public function inserir($nome, $email, $numero, $cpf, $senha, $endereco);
     public function listarid($id);
     public function listarPro($id);

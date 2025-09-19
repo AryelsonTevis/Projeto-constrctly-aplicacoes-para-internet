@@ -8,7 +8,7 @@ class UsuarioTemp implements ITemplate
 {
     public function cabecalho()
     {   
-        echo '<link rel="stylesheet" href="/Projeto/assets/css/global.css">';
+        echo '<link rel="stylesheet" href="/projeto/assets/css/global.css">';
         echo "<nav>Cabeçalho</nav>";
          echo "<main>";
     }

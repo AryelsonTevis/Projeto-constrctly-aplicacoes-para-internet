@@ -39,7 +39,7 @@ class Usuario
         $endereco = $_POST["endereço_cobrança"];
         $service = new UsuarioService();
         $resultado = $service->inserir($nome, $email, $telefone, $cpf, $senha_hash, $endereco);
-        header("location: /trabalho_patrick/usuario/listar?info=1");
+        $this->template->layout("\\public\\usuario\\login.php");
     }
     public function formulario()
     {
@@ -84,6 +84,27 @@ class Usuario
         $resultado = $service->listarPro($id);
 
        $this->template->layout("\\public\\proprietario\\listarpro.php", $resultado);
+        
+    }
+     public function login()
+    {
+        $this->template->layout("\\public\\usuario\\login.php");
+        
+    }
+     public function logar()
+    {
+        $senha = $_POST["senha"];        
+        $email = $_POST["email"];
+        
+        $service = new UsuarioService();
+        $resultado = $service->logar($email);
+        
+        if ($resultado && isset($resultado[0]) && password_verify($senha, $resultado[0]['senha'])) {
+            $id = $resultado[0]['usuario_id'];
+            $resultado = $service->listarPro($id);
+            $this->template->layout("\\public\\proprietario\\listarpro.php", $resultado);
+        }
+
         
     }
 }

@@ -10,6 +10,10 @@ class UsuarioService extends UsuarioDAO
     {
         return parent::listar();
     }
+    public function logar($email)
+    {
+        return parent::logar($email);
+    }
     public function inserir($nome, $email, $telefone, $cpf, $senha, $endereco)
     {
         return parent::inserir($nome, $email, $telefone, $cpf, $senha, $endereco);
