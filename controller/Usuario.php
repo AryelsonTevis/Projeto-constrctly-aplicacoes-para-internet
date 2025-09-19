@@ -39,7 +39,7 @@ class Usuario
         $endereco = $_POST["endereço_cobrança"];
         $service = new UsuarioService();
         $resultado = $service->inserir($nome, $email, $telefone, $cpf, $senha_hash, $endereco);
-        header("location: /trabalho_patrick/usuario/listar?info=1");
+        header("location: /projeto/usuario/listar?info=1");
     }
     public function formulario()
     {
@@ -68,20 +68,20 @@ class Usuario
         $endereco = $_POST["endereço_cobrança"];
         $service = new UsuarioService();
         $resultado = $service->alterar($id, $nome, $email, $telefone, $cpf, $senha_hash, $endereco);
-        header("location: /trabalho_patrick/usuario/listar?info=1");
+        header("location: /projeto/usuario/listar?info=1");
     }
     public function apagar()
     {
         $id = $_GET["id"];
         $service = new UsuarioService();
         $resultado = $service->apagar($id);
-        header("location: /trabalho_patrick/usuario/listar?info=1");
+        header("location: /projeto/usuario/listar?info=1");
     }
     public function listarProprietarios($id)
     {
         $id = $_GET['id'];
         $service = new UsuarioService();
         $resultado = $service->inserir($id);
-        header("location: /trabalho_patrick/usuario/listarproprietarios?info=1");
+        header("location: /projeto/usuario/listarproprietarios?info=1");
     }
 }

@@ -1,0 +1,45 @@
+*{  
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+td, th{
+    color: black;
+    border: 1px solid black;
+    padding: 10px;
+}
+.title{
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-right:60px;
+}
+.button-cadastrar{
+    background-color: rgb(165, 164, 164);
+    border: solid 2px;
+    padding: 10px;
+    color: black;
+}
+.button-cadastrar:hover{
+    background-color: rgb(62, 152, 255);
+}
+.tabela{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border: 1px solid black;
+    
+}
+.self-acoes{
+    border: solid 1px;
+    padding: 5px;
+    color: black;
+}
+.self-acoes:hover{
+    color: white;
+    background-color: gray;
+}

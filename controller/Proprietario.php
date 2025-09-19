@@ -35,7 +35,7 @@ class Proprietario
         $endereco = $_POST["endereço_cobrança"];
         $service = new ProprietarioService();
         $resultado = $service->inserir($nome, $email, $telefone, $cpf, $endereco);
-        header("location: /trabalho_patrick/proprietario/listarpro?info=1");
+        header("location: /projeto/proprietario/listarpro?info=1");
     }
     public function formulario()
     {

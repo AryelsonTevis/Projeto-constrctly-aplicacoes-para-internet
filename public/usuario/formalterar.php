@@ -1,7 +1,7 @@
 <?php foreach ($parametro as $p) { ?>
 <tr>
     <td>
-        <form action="/trabalho_patrick/usuario/alterar" method="post">
+        <form action="/projeto/usuario/alterar" method="post">
             <input type="hidden" name="usuario_id" value="<?= $p['usuario_id']; ?>">
 
             <input type="text" name="nome" value="<?= $p['nome']; ?>">

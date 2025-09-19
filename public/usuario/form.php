@@ -1,4 +1,4 @@
-<form action="/trabalho_patrick/usuario/inserir" method="post">
+<form action="/projeto/usuario/inserir" method="post">
     <?php
     if ($parametro != null) {
     ?>

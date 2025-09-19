@@ -7,18 +7,21 @@ use template\ITemplate;
 class UsuarioTemp implements ITemplate
 {
     public function cabecalho()
-    {
-        echo "<div>Cabeçalho</div>";
+    {   
+        echo '<link rel="stylesheet" href="/Projeto/assets/css/global.css">';
+        echo "<nav>Cabeçalho</nav>";
+         echo "<main>";
     }
+    
     public function rodape()
-    {
-        echo "<div>Rodapé</div>";
+    {   echo "</main>";
+        echo "<footer>Rodapé</footer>";
     }
     public function layout($caminho, $parametro = null)
     {
         $this->cabecalho();
-
-        include $_SERVER["DOCUMENT_ROOT"] . "\\trabalho_patrick" . $caminho;
+        include $_SERVER["DOCUMENT_ROOT"]."\\Projeto".$caminho;
+    
         $this->rodape();
     }
 }
