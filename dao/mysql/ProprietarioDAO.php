@@ -20,12 +20,12 @@ class ProprietarioDAO extends MysqlFactory implements IProprietarioDAO
         $retorno = $this->banco->executar($sql, $param);
         return $retorno;
     }
-    public function inserir($nome, $email, $telefone, $cpf, $endereco)
+    public function inserir($nome, $id, $email, $telefone, $cpf, $endereco)
     {
-        $sql = "insert into proprietarios (proprietario,fk_usuarios,email,numero_telefone,CPF_CNPJ,endereço_cobrança) values (:nome,:email,:telefone, :cpf,:endereco_cobranca)";
+        $sql = "insert into proprietarios (proprietario,fk_usuarios,email,numero_telefone,CPF_CNPJ,endereço_cobrança) values (:nome,:id,:email,:telefone, :cpf,:endereco_cobranca)";
         $param = [
             ":nome" => $nome,
-
+            ":id" => $id,
             ":email" => $email,
             ":telefone" => $telefone,
             ":cpf" => $cpf,

@@ -1,4 +1,4 @@
-<a href="/projeto/proprietario/formulario">Cadastrar</a>
+<a href="/projeto/proprietario/formulario?id=">Cadastrar</a>
 <table>
     <tr>
         <th>ID</th>
@@ -49,4 +49,4 @@
 
 
 
-</table>
+</table><a href="/projeto/usuario/logout">sair</a>

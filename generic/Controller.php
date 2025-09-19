@@ -9,7 +9,8 @@ class Controller
     {
         $this->arrayChamadas = [
             "usuario/login" => new Acao("Usuario", "login"),
-            "usuario/logar" => new Acao("Usuario", "logar"),
+            "usuario/logado" => new Acao("Usuario", "logado"),
+            "usuario/logout" => new Acao("Usuario", "logout"),
             "usuario/listar" => new Acao("Usuario", "listar"),
             "usuario/listarid" => new Acao("Usuario", "listarid"),
             "usuario/listarpro" => new Acao("Usuario", "listarpro"),

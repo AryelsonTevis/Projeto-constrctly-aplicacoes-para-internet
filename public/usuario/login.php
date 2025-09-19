@@ -1,4 +1,4 @@
-<form action="/projeto/usuario/logar" method="post">
+<form action="/projeto/usuario/logado" method="post">
 
 
 

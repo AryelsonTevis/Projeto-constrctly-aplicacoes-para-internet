@@ -5,8 +5,10 @@
     <input type="hidden" name="proprietario_id" value="<?= $parametro[0]["proprietario_id"] ?>" />
     <?php
     }
+ 
     ?>
-    <input type="hidden" name="usuario_id" value="<?= $p['fk_usuarios']; ?>">
+
+
 
 
     <label>Nome:</label>
