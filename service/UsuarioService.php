@@ -30,12 +30,4 @@ class UsuarioService extends UsuarioDAO
     {
         return parent::apagar($id);
     }
-<<<<<<< HEAD
 }
-=======
-     public function listarProprietarios($id)
-    {
-        return parent::listarProprietarios($id);
-    }
-}
->>>>>>> 421158102ee9ed20bac090ce65bc4e4938cbb5ce

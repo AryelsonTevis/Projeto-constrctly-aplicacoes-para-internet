@@ -77,11 +77,13 @@ class Usuario
         $resultado = $service->apagar($id);
         header("location: /trabalho_patrick/usuario/listar?info=1");
     }
-    public function listarProprietarios($id)
+    public function listarPro()
     {
         $id = $_GET['id'];
         $service = new UsuarioService();
-        $resultado = $service->inserir($id);
-        header("location: /trabalho_patrick/usuario/listarproprietarios?info=1");
+        $resultado = $service->listarPro($id);
+
+       $this->template->layout("\\public\\proprietario\\listarpro.php", $resultado);
+        
     }
 }
