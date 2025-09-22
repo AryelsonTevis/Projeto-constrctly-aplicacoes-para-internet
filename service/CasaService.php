@@ -10,6 +10,10 @@ class casaService extends CasaDAO
     {
         return parent::listarcasa($id);
     }
+    public function listarId($id)
+    {
+        return parent::listarId($id);
+    }
     public function inserir($id, $bairro,  $metros, $comodos, $valor)
     {
         return parent::inserir( $id, $bairro, $metros, $comodos, $valor);

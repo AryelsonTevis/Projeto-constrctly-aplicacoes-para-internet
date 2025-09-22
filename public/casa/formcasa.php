@@ -5,12 +5,11 @@
     <input type="hidden" name="casa_id" value="<?= $parametro[0]["casa_id"] ?>" />
 
 
-
-    <?php
+    <?php 
     }
  
     ?>
-
+    <input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
 
 
 

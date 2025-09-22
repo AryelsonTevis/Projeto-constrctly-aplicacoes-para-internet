@@ -1,4 +1,5 @@
-<a href="/projeto/casa/formulario?id=">Cadastrar</a>
+<a href="/projeto/casa/formulario?id=<?= $_GET['id']?>">Cadastrar</a>
+
 <table>
     <tr>
         <th>ID</th>
@@ -32,7 +33,7 @@
         </td>
 
 
-        <td><a href="/projeto/casa/formulrioalterar?id=<?php echo $p['casa_id']; ?>">alterar</a>
+        <td><a href="/projeto/casa/formularioalterar?id=<?php echo $p['casa_id']; ?>">alterar</a>
         </td>
         <td><a href="/projeto/casa/apagar?id=<?php echo $p['casa_id']; ?>">apagar</a></td>
         <td><a href="/projeto/casa/listarcomodo?id=<?php echo $p['casa_id']; ?>">comodos</a></td>

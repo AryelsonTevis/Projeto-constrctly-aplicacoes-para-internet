@@ -32,24 +32,36 @@ class Casa{
     public function inserir()
     {
         
-    $id = $_POST['id'];
     
-    
-    
+    $id = $_POST['id'] ?? null;
+        var_dump($id);
     
     $bairro = $_POST["bairro"];
+   
     $metros = $_POST["metros"];
     $comodos = $_POST["comodos"];
     $valor = $_POST["valor"];
-   
+    
     
     
     $service = new CasaService();
     $resultado = $service->inserir( $id, $bairro, $metros, $comodos, $valor);
     
-    $this->template->layout("\\public\\casa\\listarcasa.php", $id);
+        
+
+        header("location: /projeto/casa/listarcasa?id=".$id);
     
     exit();
         
     }
+    public function alterarForm() {
+        $id = $_GET['id'];
+        $service = new CasaService();
+        $resultado = $service->listarId($id);
+
+        $this->template->layout("\\public\\casa\\formalterar.php", $resultado);
+        
+    }
+    
+    
 }
