@@ -105,8 +105,11 @@ class Usuario
             $id = $resultado[0]['usuario_id'];
             $resultado = $service->listarPro($id);
             $this->template->layout("\\public\\proprietario\\listarpro.php", $resultado);
+        }else{
+            session_unset();   
+            session_destroy(); header("Location: /projeto/");
+            exit;
         }
-
         
     }
     public function logout()
