@@ -19,27 +19,37 @@ th {
   margin-right: 60px;
 }
 .button-cadastrar {
-  background-color: rgb(165, 164, 164);
+  background-color: rgb(73, 73, 73);
   border: solid 2px;
   padding: 10px;
-  color: black;
+  color: white;
+  border: solid 2px;
+  border-radius: 2px;
 }
 .button-cadastrar:hover {
-  background-color: rgb(62, 152, 255);
+  background-color: white;
+  color: black;
 }
 .tabela {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  border: 1px solid black;
+  
+  border-radius: 2px;
 }
 .self-acoes {
-  border: solid 1px;
+  border: solid 2px black;
+  box-sizing: border-box;
+  border-radius: 2px;
   padding: 5px;
-  color: black;
+  color: white;
+  background-color: rgb(73, 73, 73);
+  margin: 2px;
+  cursor: pointer;
 }
 .self-acoes:hover {
-  color: white;
-  background-color: gray;
+  color: black;
+  background-color: white;
+  border-radius: 2px;
 }
