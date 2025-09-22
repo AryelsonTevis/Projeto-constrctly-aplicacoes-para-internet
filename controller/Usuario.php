@@ -68,14 +68,14 @@ class Usuario
         $endereco = $_POST["endereço_cobrança"];
         $service = new UsuarioService();
         $resultado = $service->alterar($id, $nome, $email, $telefone, $cpf, $senha_hash, $endereco);
-        header("location: /trabalho_patrick/usuario/listar?info=1");
+        header("location: /projeto/usuario/listar?info=1");
     }
     public function apagar()
     {
         $id = $_GET["id"];
         $service = new UsuarioService();
         $resultado = $service->apagar($id);
-        header("location: /trabalho_patrick/usuario/listar?info=1");
+        header("location: /projeto/usuario/listar?info=1");
     }
     public function listarPro()
     {
@@ -91,7 +91,7 @@ class Usuario
         $this->template->layout("\\public\\usuario\\login.php");
         
     }
-     public function logar()
+     public function logado()
     {
         $senha = $_POST["senha"];        
         $email = $_POST["email"];
@@ -100,11 +100,21 @@ class Usuario
         $resultado = $service->logar($email);
         
         if ($resultado && isset($resultado[0]) && password_verify($senha, $resultado[0]['senha'])) {
+            
+            $_SESSION['usuario_logado_id'] = $resultado[0]['usuario_id'];
             $id = $resultado[0]['usuario_id'];
             $resultado = $service->listarPro($id);
             $this->template->layout("\\public\\proprietario\\listarpro.php", $resultado);
         }
 
+        
+    }
+    public function logout()
+    {
+         
+        session_unset();   
+        session_destroy(); header("Location: /projeto/");
+        exit;
         
     }
 }

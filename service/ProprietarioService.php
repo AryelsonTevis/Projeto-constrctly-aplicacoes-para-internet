@@ -16,8 +16,17 @@ class proprietarioService extends ProprietarioDAO
     {
         return parent::listarId($id);
     }
-    public function inserir($nome, $email, $telefone, $cpf, $endereco)
+    
+    public function apagar($id)
     {
-        return parent::inserir($nome, $email, $telefone, $cpf, $endereco);
+        return parent::apagar($id);
+    }
+    public function inserir($nome, $id, $email, $telefone, $cpf, $endereco)
+    {
+        return parent::inserir($nome, $id, $email, $telefone, $cpf, $endereco);
+    }
+    public function alterar($id, $nome, $email, $telefone, $cpf, $endereco)
+    {
+        return parent::alterar($id, $nome, $email, $telefone, $cpf, $endereco);
     }
 }

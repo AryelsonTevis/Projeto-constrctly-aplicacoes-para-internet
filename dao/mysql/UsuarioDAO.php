@@ -9,7 +9,7 @@ class UsuarioDAO extends MysqlFactory implements IUsuarioDAO
 {
    public function logar($email)
    {
-        $sql = "select usuario_id, senha from usuarios where email = :email";
+        $sql = "select * from usuarios where email = :email";
         $param =[":email" => $email];
         $retorno = $this->banco->executar($sql, $param);
         return $retorno;

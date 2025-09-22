@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include "generic/Autoload.php";
 
 use generic\Controller;

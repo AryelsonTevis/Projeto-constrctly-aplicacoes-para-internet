@@ -1,4 +1,4 @@
-<a href="/projeto/proprietario/formulario">Cadastrar</a>
+<a href="/projeto/proprietario/formulario?id=">Cadastrar</a>
 <table>
     <tr>
         <th>ID</th>
@@ -34,11 +34,10 @@
             <?= $p["endereço_cobrança"] ?>
         </td>
 
-        <td><a href="
-    /projeto/proprietario/formulrioalterar?id=<?php echo $p['proprietario_id']; ?>">alterar</a>
+        <td><a href="/projeto/proprietario/formularioalterar?id=<?php echo $p['proprietario_id']; ?>">alterar</a>
         </td>
         <td><a href="/projeto/proprietario/apagar?id=<?php echo $p['proprietario_id']; ?>">apagar</a></td>
-        <td><a href="/projeto/proprietario/listarid?id=<?php echo $p['proprietario_id']; ?>">casas</a></td>
+        <td><a href="/projeto/casa/listarcasa?id=<?php echo $p['proprietario_id']; ?>">casas</a></td>
 
     </tr>
     <?php
@@ -49,4 +48,4 @@
 
 
 
-</table>
+</table><a href="/projeto/usuario/logout">sair</a>

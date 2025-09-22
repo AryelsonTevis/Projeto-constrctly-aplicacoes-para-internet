@@ -9,7 +9,8 @@ class Controller
     {
         $this->arrayChamadas = [
             "usuario/login" => new Acao("Usuario", "login"),
-            "usuario/logar" => new Acao("Usuario", "logar"),
+            "usuario/logado" => new Acao("Usuario", "logado"),
+            "usuario/logout" => new Acao("Usuario", "logout"),
             "usuario/listar" => new Acao("Usuario", "listar"),
             "usuario/listarid" => new Acao("Usuario", "listarid"),
             "usuario/listarpro" => new Acao("Usuario", "listarpro"),
@@ -22,7 +23,20 @@ class Controller
             "proprietario/listar" => new Acao("Proprietario", "listar"),
             "proprietario/listarid" => new Acao("Proprietario", "listarid"),
             "proprietario/formulario" => new Acao("Proprietario", "formulario"),
-            "proprietario/inserir" => new Acao("Proprietario", "inserir")
+            "proprietario/formularioalterar" => new Acao("Proprietario", "alterarForm"),
+            "proprietario/alterar" => new Acao("Proprietario", "alterar"),
+            "proprietario/inserir" => new Acao("Proprietario", "inserir"),
+            "proprietario/apagar" => new Acao("Proprietario", "apagar"),
+
+            "casa/listarcasa" => new Acao("Casa", "listarcasa"),
+            "casa/formulario" => new Acao("Casa", "formulario"),
+            "casa/inserir" => new Acao("Casa", "inserir"),
+            "casa/formularioalterar" => new Acao("Casa", "alterarForm")
+
+
+
+
+            
 
 
         ];

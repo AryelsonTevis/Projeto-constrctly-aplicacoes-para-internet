@@ -27,7 +27,7 @@ Siga estas instruções para configurar e rodar a aplicação na sua máquina.
 1.  **Clone o Repositório:**
 
     ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+    git clone [https://github.com/AryelsonTevis/Projeto-constrctly-aplicacoes-para-internet.git](https://github.com/AryelsonTevis/Projeto-constrctly-aplicacoes-para-internet.git)
     ```
 
 2.  **Renomeie a Pasta do Projeto:**
