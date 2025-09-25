@@ -3,7 +3,7 @@
     <td>
         <form action="/projeto/comodo/alterar" method="post">
             <input type="hidden" name="id_comodo" value="<?= $p['id_comodo']; ?>">
-           
+
 
             <label>Comodo:</label>
             <input type="text" name="comodo" value="<?= $p['comodo']; ?>">
@@ -14,7 +14,11 @@
             <label>Progresso:</label>
             <input type="text" name="progresso" value="<?= $p['progresso']; ?>">
             <br>
-            <input type="submit" value="alterar" class="buton">
+            <div>
+                <a class="button-voltar" href="/projeto/comodo/voltar">Voltar</a>
+                <input class="button-enviar" type="submit" value="Alterar" class="buton">
+            </div>
+
         </form>
     </td>
 </tr>

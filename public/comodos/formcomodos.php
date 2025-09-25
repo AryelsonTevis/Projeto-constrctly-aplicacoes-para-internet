@@ -9,7 +9,7 @@
     }
  
     ?>
-    <input type="hidden" name="fk" value="<?= $_GET["id"] ?>" />
+
 
 
 
@@ -25,6 +25,10 @@
     <br />
 
 
-    <input type="submit" value="Enviar">
 
-</form>
+
+</form><input type="submit" value="Enviar">
+<div>
+    <a class="button-voltar" href="/projeto/comodo/voltar">Voltar</a>
+
+</div>

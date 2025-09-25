@@ -26,6 +26,15 @@ class Comodo{
 
         $this->template->layout("\\public\\comodos\\listarcomodos.php", $resultado);
     }
+    public function voltar(){
+        
+        $service = new ComodoService();
+        $resultado = $service->listarComodo($_SESSION['id_casa']);
+        
+        
+
+        $this->template->layout("\\public\\comodos\\listarcomodos.php", $resultado);
+    }
     public function formulario()
     {
             
@@ -36,7 +45,7 @@ class Comodo{
     {
         
     
-    $id = $_POST['fk'] ?? null;
+    $id = $_SESSION['id_casa'];
         
     
     

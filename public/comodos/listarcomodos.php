@@ -1,4 +1,4 @@
-<a href="/projeto/comodo/formulario?id=<?= $_GET['id']?>">Cadastrar</a>
+<a href="/projeto/comodo/formulario">Cadastrar</a>
 
 
 <table>
@@ -41,8 +41,7 @@
 
 
 
-        <td><a
-                href="/projeto/comodo/apagar?comodo_id=<?php echo $p['id_comodo'];  ?>&id=<?php echo $_GET['id'] ?>">apagar</a>
+        <td><a href="/projeto/comodo/apagar?comodo_id=<?php echo $p['id_comodo'];  ?>">apagar</a>
         </td>
 
 
