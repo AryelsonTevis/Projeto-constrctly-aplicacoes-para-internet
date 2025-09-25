@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23/09/2025 às 00:30
+-- Tempo de geração: 25/09/2025 às 21:02
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `constructly`
 --
+CREATE DATABASE IF NOT EXISTS `constructly` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `constructly`;
 
 -- --------------------------------------------------------
 
@@ -33,7 +35,7 @@ CREATE TABLE `casas` (
   `bairro` varchar(100) NOT NULL,
   `metros` int(100) NOT NULL,
   `quantidade_comodos` int(100) NOT NULL,
-  `valor_estimado` int(100) NOT NULL,
+  `valor_estimado` float NOT NULL,
   `data_contrucao` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -42,10 +44,7 @@ CREATE TABLE `casas` (
 --
 
 INSERT INTO `casas` (`casa_id`, `fk_proprietario`, `bairro`, `metros`, `quantidade_comodos`, `valor_estimado`, `data_contrucao`) VALUES
-(1, 1, 'Josa Bernardino II', 0, 0, 0, '2015-03-04'),
-(2, 2, 'Abadia', 0, 0, 0, '2025-08-15'),
-(3, 3, 'São Benedito', 0, 0, 0, '2025-08-15'),
-(4, 1, 'Jardim Elza Amui II', 0, 0, 0, '2025-08-15');
+(1, 1, 'R. José de Alencar N°1391 ', 300, 4, 10000, '2025-09-25');
 
 -- --------------------------------------------------------
 
@@ -65,12 +64,9 @@ CREATE TABLE `comodos` (
 --
 
 INSERT INTO `comodos` (`id_comodo`, `fk_casa`, `comodo`, `area`) VALUES
-(1, 1, 'Quarto', 0),
-(2, 1, 'Cozinha', 0),
-(3, 2, 'Quarto', 0),
-(4, 2, 'Sala', 0),
-(5, 3, 'Cozinha', 0),
-(6, 3, 'Lavenderia', 0);
+(1, 1, 'Sala', 20),
+(2, 1, 'Quarto', 50),
+(3, 1, 'Banheiro', 10);
 
 -- --------------------------------------------------------
 
@@ -94,12 +90,7 @@ CREATE TABLE `proprietarios` (
 --
 
 INSERT INTO `proprietarios` (`proprietario_id`, `proprietario`, `fk_usuarios`, `email`, `numero_telefone`, `CPF_CNPJ`, `endereço_cobrança`, `data_cadastro`) VALUES
-(1, 'Aryelson', 1, '', 0, '0', '', '2025-08-15'),
-(2, 'João victor', 2, '', 0, '0', '', '2025-08-15'),
-(3, 'Caroline', 1, '', 0, '0', '', '2025-08-15'),
-(4, 'meu', 2, 'pau', 69, '70441272665', 'seu98', '2025-08-20'),
-(5, 'aaaa', 1, 'asdfghj', 99999, '17994593062', 'asdfghjklç', '2025-08-21'),
-(6, 'a', 2, 'a', 1234, '24023583006', 'asert67ujn', '2025-08-21');
+(1, 'Pedro Paulo', 1, 'PP_do_grau@gmail.com', 0, '99999999999', 'Av. Silvio Vieira da Siĺva N°293 ', '2025-09-25');
 
 -- --------------------------------------------------------
 
@@ -121,9 +112,9 @@ CREATE TABLE `task` (
 --
 
 INSERT INTO `task` (`id_task`, `fk_comodos`, `progresso`, `data_criacao`, `data_inicio`, `data_conclusao`) VALUES
-(1, 6, '50%', '2025-08-01', '2025-08-31', '2026-08-31'),
-(2, 2, '30%', '2025-08-01', '2025-08-31', '2029-08-31'),
-(3, 5, '25%', '2025-06-03', '2025-09-01', '2028-10-12');
+(1, 1, '10%', '2025-09-25', '2025-09-25', '2025-09-25'),
+(2, 2, '0%', '2025-09-25', '2025-09-25', '2025-09-25'),
+(3, 3, '0%', '2025-09-25', '2025-09-25', '2025-09-25');
 
 -- --------------------------------------------------------
 
@@ -147,9 +138,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`usuario_id`, `nome`, `email`, `numero_telefone`, `CPF_CNPJ`, `senha`, `endereço_cobrança`, `data_cadastro`) VALUES
-(1, 'a', 'a', '123456', '02537717066', '$2y$10$5VcqGJwrkv2Zvw.0AZOICOb7ip2X7J4WIlFpzVxi6NQI0GbYHySgO', 'asdfghjklp', '2025-08-21'),
-(2, 'b', 'b@gmail.com', '1234567890', '0987654321', 'ASDFGHJK1234', 'fsjkdgvkjcshdvcgjsdc', '2025-09-04'),
-(3, 'Joao', 'joao_0188@outlook.com', '34987197132', '147.113.176-94', '$2y$10$TYDN17IV5jvtY71hwRryn.wBUM49JTASDFl/AefonOmdTApCl4PR6', 'Rua Ismael Machado', '2025-09-19');
+(1, 'João Pedro', 'test@test.com', '(99)9999999', '99999999999', '$2y$10$0Qx0v3wZ6VhJ4xNFcbVkQeWXVpV7r5sUtbF1aCYCV.Nq6O8Dabm82', 'R. Mario Azevedo 139 ', '2025-09-25');
 
 --
 -- Índices para tabelas despejadas
@@ -197,19 +186,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `casas`
 --
 ALTER TABLE `casas`
-  MODIFY `casa_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `casa_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `comodos`
 --
 ALTER TABLE `comodos`
-  MODIFY `id_comodo` int(150) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_comodo` int(150) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `proprietarios`
 --
 ALTER TABLE `proprietarios`
-  MODIFY `proprietario_id` int(150) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `proprietario_id` int(150) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `task`
@@ -221,7 +210,7 @@ ALTER TABLE `task`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `usuario_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `usuario_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para tabelas despejadas

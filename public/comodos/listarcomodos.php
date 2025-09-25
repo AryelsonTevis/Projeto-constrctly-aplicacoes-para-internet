@@ -31,7 +31,7 @@
 
         <td>
             <?php if ($p["progresso"] == null) {?>
-            <a class="self-acoes" href="/projeto/comodo/inserirpor?id=<?php echo $p['id_comodo']; ?>">clique
+            <a class="self-acoes" href="/projeto/comodo/inserirpor?id=<?php echo $p['id_comodo']; ?>">Começar
             </a>
             <?php }?>
             <?php  if ($p["progresso"] != null){?>
