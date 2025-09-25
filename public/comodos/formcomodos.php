@@ -9,7 +9,7 @@
         <?php
         }
         ?>
-        <input type="hidden" name="fk" value="<?= $_GET["id"] ?>" />
+
 
         <label>Comodo:</label>
         <input class="text-box" type="text" name="comodo"
@@ -25,7 +25,7 @@
         <br />
 
         <div>
-            <a class="button-voltar" href="/projeto/proprietario/voltar">Voltar</a>
+            <a class="button-voltar" href="/projeto/comodo/voltar">Voltar</a>
             <input class="button-enviar" type="submit" value="Enviar">
         </div>
 
