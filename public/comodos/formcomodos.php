@@ -9,7 +9,7 @@
     }
  
     ?>
-
+    
 
 
 
@@ -25,10 +25,6 @@
     <br />
 
 
+    <input type="submit" value="Enviar">
 
-
-</form><input type="submit" value="Enviar">
-<div>
-    <a class="button-voltar" href="/projeto/comodo/voltar">Voltar</a>
-
-</div>
+</form>
