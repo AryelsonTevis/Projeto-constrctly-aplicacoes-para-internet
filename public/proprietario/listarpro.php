@@ -1,14 +1,12 @@
-<link rel="stylesheet" href="/projeto/assets/css/listarProprietarios.css">
+<link rel="stylesheet" href="/projeto/assets/css/tabelas.css">
 
-    
-
+<h2 class="title">Proprietários</h2>
 <div class="button-container">
     <a class="button-cadastrar" href="/projeto/proprietario/formulario?id=">Cadastrar</a>
     <a class="button-exit" href="/projeto/usuario/logout">Sair</a>
 </div>
 
 <table class="tabela">
-    <h2 class="title">Proprietarios</h2>
     <tr>
         <th>ID</th>
         <th>Nome</th>

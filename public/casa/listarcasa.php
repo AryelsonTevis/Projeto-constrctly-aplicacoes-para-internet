@@ -1,12 +1,17 @@
-<a href="/projeto/casa/formulario">Cadastrar</a>
+<link rel="stylesheet" href="/projeto/assets/css/tabelas.css">
+<h2 class="title">Casas</h2>
+<div class="button-container">
+    <a  class="button-cadastrar" href="/projeto/casa/formulario">Cadastrar</a>
+    <a class="button-exit" href="/projeto/proprietario/voltar">Voltar</a>
+</div>
 
-<table>
+<table class="tabela">
     <tr>
         <th>ID</th>
         <th>Bairro</th>
         <th>Metros</th>
         <th>Comodos</th>
-        <th>EstimativaR$</th>
+        <th>Estimativa R$</th>
 
         <th>Ações</th>
 
@@ -15,32 +20,18 @@
 
     ?>
     <tr>
-        <td>
-            <?= $p["casa_id"] ?>
-        </td>
+        <td><?= $p["casa_id"] ?></td>
+        <td><?= $p["bairro"] ?></td>
+        <td><?= $p["metros"] ?></td>
+        <td><?= $p["quantidade_comodos"] ?></td>
+        <td><?= $p["valor_estimado"] ?></td>
 
         <td>
-            <?= $p["bairro"] ?>
+            <a class="self-acoes" href="/projeto/casa/formularioalterar?id=<?php echo $p['casa_id'] ?>">Alterar</a> |
+            <a class="self-acoes" href="/projeto/comodo/listarcomodo?id=<?php echo $p['casa_id'] ?>">Comodos</a> |
+            <a class="self-acoes" href="/projeto/casa/apagar?id=<?php echo $p['casa_id'] ?>">Apagar</a>
         </td>
-        <td>
-            <?= $p["metros"] ?>
-        </td>
-        <td>
-            <?= $p["quantidade_comodos"] ?>
-        </td>
-        <td>
-            <?= $p["valor_estimado"] ?>
-        </td>
-
-
-        <td><a href="/projeto/casa/formularioalterar?id=<?php echo $p['casa_id'] ?>">alterar</a>
-        </td>
-        <td><a href="/projeto/casa/apagar?id=<?php echo $p['casa_id'] ?>">apagar</a>
-        </td>
-        <td><a href="/projeto/comodo/listarcomodo?id=<?php echo $p['casa_id'] ?>">comodos</a>
-        </td>
-
     </tr>
     <?php
     } ?>
-</table><a href="/projeto/proprietario/voltar">Voltar</a>
+</table>
