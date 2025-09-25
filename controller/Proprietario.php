@@ -46,9 +46,8 @@ class Proprietario
     
         $service = new UsuarioService();
         $id = $_SESSION['usuario_logado_id'];
-        $resultado = $service->listarPro($id);
-
-       $this->template->layout("\\public\\proprietario\\listarpro.php", $resultado);
+        header("location: /projeto/proprietario/voltar");
+        
     
     exit();
         

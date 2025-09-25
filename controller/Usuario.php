@@ -102,6 +102,7 @@ class Usuario
         if ($resultado && isset($resultado[0]) && password_verify($senha, $resultado[0]['senha'])) {
             
             $_SESSION['usuario_logado_id'] = $resultado[0]['usuario_id'];
+            $_SESSION['usuario_logado_nome'] = $resultado[0]['nome'];
             $id = $resultado[0]['usuario_id'];
             $resultado = $service->listarPro($id);
             $this->template->layout("\\public\\proprietario\\listarpro.php", $resultado);

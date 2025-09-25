@@ -7,12 +7,15 @@ class UsuarioTemp implements ITemplate
 {
     public function cabecalho()
     {   
+        $nome_usuario = isset($_SESSION['usuario_logado_nome']) ? $_SESSION['usuario_logado_nome'] : 'Visitante';
         echo '<link rel="stylesheet" href="/projeto/assets/css/global.css">';
 
         
 
-        echo "<nav>Cabeçalho</nav>";
-         echo "<main>";
+    echo "<nav>"; 
+    echo "Cabeçalho - Bem-vindo(a), " .$nome_usuario;
+    echo "</nav>";
+    echo "<main>";
     }
     
     public function rodape()

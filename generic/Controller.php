@@ -36,6 +36,8 @@ class Controller
             "casa/formularioalterar" => new Acao("Casa", "alterarForm"),
             "casa/alterar" => new Acao("Casa", "alterar"),
             "casa/apagar" => new Acao("Casa", "apagar"),
+            "casa/voltar" => new Acao("Casa", "voltar"),
+
             
 
             "comodo/listarcomodo" => new Acao("Comodo", "listarcomodo"),

@@ -26,6 +26,15 @@ class Casa{
 
         $this->template->layout("\\public\\casa\\listarcasa.php", $resultado);
     }
+    public function voltar(){
+        
+        $service = new CasaService();
+        $resultado = $service->listarCasa($_SESSION['id_proprietario']);
+        
+        
+
+        $this->template->layout("\\public\\casa\\listarcasa.php", $resultado);
+    }
     public function formulario()
     {
             
@@ -37,8 +46,7 @@ class Casa{
         
     
     $id = $_SESSION['id_proprietario'] ?? null;
-        var_dump($id);
-    
+        
     $bairro = $_POST["bairro"];
    
     $metros = $_POST["metros"];
@@ -84,7 +92,7 @@ class Casa{
         
         
 
-        header("location: /projeto/casa/listarcasa?id=".$id_pro);
+        header("location: /projeto/casa/voltar");
         
     }
     public function apagar() {
@@ -96,9 +104,10 @@ class Casa{
         $resultado = $service->apagar($id);
         
 
-        header("location: /projeto/casa/listarcasa?id=".$_SESSION['id_proprietario']);
+        header("location: /projeto/casa/voltar");
         
     }
+   
     
     
     
