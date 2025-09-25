@@ -27,17 +27,31 @@ class Controller
             "proprietario/alterar" => new Acao("Proprietario", "alterar"),
             "proprietario/inserir" => new Acao("Proprietario", "inserir"),
             "proprietario/apagar" => new Acao("Proprietario", "apagar"),
+            "proprietario/voltar" => new Acao("Proprietario", "voltar"),
+
 
             "casa/listarcasa" => new Acao("Casa", "listarcasa"),
             "casa/formulario" => new Acao("Casa", "formulario"),
             "casa/inserir" => new Acao("Casa", "inserir"),
-            "casa/formularioalterar" => new Acao("Casa", "alterarForm")
+            "casa/formularioalterar" => new Acao("Casa", "alterarForm"),
+            "casa/alterar" => new Acao("Casa", "alterar"),
+            "casa/apagar" => new Acao("Casa", "apagar"),
+            
 
+            "comodo/listarcomodo" => new Acao("Comodo", "listarcomodo"),
+            "comodo/alterar" => new Acao("Comodo", "alterar"),
+            "comodo/inserir" => new Acao("Comodo", "inserir"),
+            "comodo/formulario" => new Acao("Comodo", "formulario"),
+            "comodo/formularioalterar" => new Acao("Comodo", "alterarForm"),
+            "comodo/inserirpor" => new Acao("Comodo", "inserirpor"),
+            "comodo/apagar" => new Acao("Comodo", "apagar"),
+            "comodo/voltar" => new Acao("Comodo", "voltar")
 
 
 
             
 
+            
         ];
     }
 

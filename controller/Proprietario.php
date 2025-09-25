@@ -44,7 +44,11 @@ class Proprietario
     $service = new ProprietarioService();
     $resultado = $service->inserir($nome, $id, $email, $telefone, $cpf, $endereco);
     
-    $this->template->layout("\\public\\usuario\\listarpro.php", $id);
+        $service = new UsuarioService();
+        $id = $_SESSION['usuario_logado_id'];
+        $resultado = $service->listarPro($id);
+
+       $this->template->layout("\\public\\proprietario\\listarpro.php", $resultado);
     
     exit();
         
@@ -62,8 +66,11 @@ class Proprietario
     $id = $_GET['id'];
     $service = new ProprietarioService();
     $resultado = $service->apagar($id);
-    
-    $this->template->layout("\\public\\usuario\\listarpro.php", $id);
+    $service = new UsuarioService();
+        $id = $_SESSION['usuario_logado_id'];
+        $resultado = $service->listarPro($id);
+
+       $this->template->layout("\\public\\proprietario\\listarpro.php", $resultado);
     
     exit();
         
@@ -89,6 +96,14 @@ class Proprietario
         $service = new ProprietarioService();
         $resultado = $service->alterar($id, $nome, $email, $telefone, $cpf, $endereco);
 
+        $service = new UsuarioService();
+        $id = $_SESSION['usuario_logado_id'];
+        $resultado = $service->listarPro($id);
+
+       $this->template->layout("\\public\\proprietario\\listarpro.php", $resultado);
+    }
+
+    public function voltar(){
         $service = new UsuarioService();
         $id = $_SESSION['usuario_logado_id'];
         $resultado = $service->listarPro($id);

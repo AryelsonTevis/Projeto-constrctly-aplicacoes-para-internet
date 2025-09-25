@@ -1,4 +1,4 @@
-<a href="/projeto/casa/formulario?id=<?= $_GET['id']?>">Cadastrar</a>
+<a href="/projeto/casa/formulario">Cadastrar</a>
 
 <table>
     <tr>
@@ -33,12 +33,14 @@
         </td>
 
 
-        <td><a href="/projeto/casa/formularioalterar?id=<?php echo $p['casa_id']; ?>">alterar</a>
+        <td><a href="/projeto/casa/formularioalterar?id=<?php echo $p['casa_id'] ?>">alterar</a>
         </td>
-        <td><a href="/projeto/casa/apagar?id=<?php echo $p['casa_id']; ?>">apagar</a></td>
-        <td><a href="/projeto/casa/listarcomodo?id=<?php echo $p['casa_id']; ?>">comodos</a></td>
+        <td><a href="/projeto/casa/apagar?id=<?php echo $p['casa_id'] ?>">apagar</a>
+        </td>
+        <td><a href="/projeto/comodo/listarcomodo?id=<?php echo $p['casa_id'] ?>">comodos</a>
+        </td>
 
     </tr>
     <?php
     } ?>
-</table>
+</table><a href="/projeto/proprietario/voltar">Voltar</a>

@@ -3,6 +3,7 @@
 namespace controller;
 
 use service\CasaService;
+use service\ProprietarioService;
 
 
 use template\UsuarioTemp;
@@ -10,6 +11,7 @@ use template\ITemplate;
 
 class Casa{
     private ITemplate $template;
+    
     public function __construct()
     {
         $this->template = new UsuarioTemp();
@@ -19,6 +21,7 @@ class Casa{
         $id= $_GET['id'];
         $service = new CasaService();
         $resultado = $service->listarCasa($id);
+        $_SESSION['id_proprietario']=$id;
         
 
         $this->template->layout("\\public\\casa\\listarcasa.php", $resultado);
@@ -33,7 +36,7 @@ class Casa{
     {
         
     
-    $id = $_POST['id'] ?? null;
+    $id = $_SESSION['id_proprietario'] ?? null;
         var_dump($id);
     
     $bairro = $_POST["bairro"];
@@ -56,12 +59,48 @@ class Casa{
     }
     public function alterarForm() {
         $id = $_GET['id'];
+        
         $service = new CasaService();
         $resultado = $service->listarId($id);
+        
 
         $this->template->layout("\\public\\casa\\formalterar.php", $resultado);
         
     }
+    public function alterar()
+    {
+
+        $id = $_POST["casa_id"];
+        $bairro = $_POST["bairro"];
+        $metros = $_POST["metros"];
+        $comodos = $_POST["comodos"];
+        $valor = $_POST["valor"];
+       
+        
+        $service = new CasaService();
+        $resultado = $service->alterar($id, $bairro, $metros, $comodos, $valor);
+
+        $id_pro= $_SESSION['id_proprietario'];
+        
+        
+
+        header("location: /projeto/casa/listarcasa?id=".$id_pro);
+        
+    }
+    public function apagar() {
+        $id = $_GET['id'];
+        
+        
+        
+        $service = new CasaService();
+        $resultado = $service->apagar($id);
+        
+
+        header("location: /projeto/casa/listarcasa?id=".$_SESSION['id_proprietario']);
+        
+    }
+    
+    
     
     
 }

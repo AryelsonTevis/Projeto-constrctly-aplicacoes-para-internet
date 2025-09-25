@@ -35,4 +35,32 @@ public function listarcasa($id){
         $retorno = $this->banco->executar($sql, $param);
         return $retorno;
     }
+    public function alterar($id, $bairro, $metros, $comodos, $valor)
+    {
+        $sql = "UPDATE casas set bairro = :bairro, metros= :metros, quantidade_comodos = :comodos, valor_estimado = :valor where casa_id = :id";
+        $param = [
+            ":bairro" => $bairro,
+            ":metros" => $metros,
+            ":comodos" => $comodos,
+            ":valor" => $valor,
+            ":id" => $id
+        ];
+
+        $retorno = $this->banco->executar($sql, $param);
+        return $retorno;
+    }
+    public function apagar($id){
+        $sql = "delete from task where fk_comodos in (select id_comodo from comodos where fk_casa = :id)";
+        $param=[":id"=>$id];
+        $retorno = $this->banco->executar($sql,$param);
+        $sql = "delete from comodos where fk_casa = :id";
+        $param=[":id"=>$id];
+        $retorno = $this->banco->executar($sql,$param);
+        $sql = "delete from casas where casa_id = :id";
+        $param=[":id"=>$id];
+        $retorno = $this->banco->executar($sql,$param);
+        return $retorno;
+    }
+    
+    
 }

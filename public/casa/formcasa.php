@@ -9,7 +9,7 @@
     }
  
     ?>
-    <input type="hidden" name="id" value="<?= $_GET["id"] ?>" />
+
 
 
 

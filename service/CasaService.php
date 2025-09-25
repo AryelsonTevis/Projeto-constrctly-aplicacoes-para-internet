@@ -18,4 +18,12 @@ class casaService extends CasaDAO
     {
         return parent::inserir( $id, $bairro, $metros, $comodos, $valor);
     }
+    public function alterar($id, $bairro, $metros, $comodos, $valor)
+    {
+        return parent::alterar($id, $bairro, $metros, $comodos, $valor);
+    }
+    public function apagar($id) {
+        return parent::apagar($id);
+        
+    }
 }

@@ -45,8 +45,18 @@ class ProprietarioDAO extends MysqlFactory implements IProprietarioDAO
     
      public function apagar($id)
     {
-        $sql = "select * from proprietarios";
-        $retorno = $this->banco->executar($sql);
+        $sql = "delete from task where fk_comodos in (select id_comodo from comodos where fk_casa in (select casa_id from casas where fk_proprietario = :id))";
+        $param=[":id"=>$id];
+        $retorno = $this->banco->executar($sql,$param);
+        $sql = "delete from comodos where fk_casa in (select casa_id from casas where fk_proprietario = :id)";
+        $param=[":id"=>$id];
+        $retorno = $this->banco->executar($sql,$param);
+        $sql = "delete from casas where fk_proprietario = :id";
+        $param=[":id"=>$id];
+        $retorno = $this->banco->executar($sql,$param);
+        $sql = "delete from proprietarios where proprietario_id = :id";
+        $param=[":id"=>$id];
+        $retorno = $this->banco->executar($sql,$param);
         return $retorno;
     }
     public function alterar($id, $nome, $email, $telefone, $cpf, $endereco)
