@@ -19,6 +19,8 @@ class Controller
             "usuario/inserir" => new Acao("Usuario", "inserir"),
             "usuario/alterar" => new Acao("Usuario", "alterar"),
             "usuario/apagar" => new Acao("Usuario", "apagar"),
+            "usuario/menu" => new Acao("Usuario", "menu"),
+
 
             "proprietario/listar" => new Acao("Proprietario", "listar"),
             "proprietario/listarid" => new Acao("Proprietario", "listarid"),

@@ -49,9 +49,9 @@ class Usuario
     public function alterarForm()
     {
 
-        $id = $_GET['id'];
+        
         $service = new UsuarioService();
-        $resultado = $service->listarId($id);
+        $resultado = $service->listarId($_SESSION['usuario_logado_id']);
 
         $this->template->layout("\\public\\usuario\\formalterar.php", $resultado);
     }
@@ -68,14 +68,15 @@ class Usuario
         $endereco = $_POST["endereço_cobrança"];
         $service = new UsuarioService();
         $resultado = $service->alterar($id, $nome, $email, $telefone, $cpf, $senha_hash, $endereco);
-        header("location: /projeto/usuario/listar?info=1");
+        header("location: /projeto/usuario/menu");
     }
     public function apagar()
     {
-        $id = $_GET["id"];
+        
         $service = new UsuarioService();
-        $resultado = $service->apagar($id);
-        header("location: /projeto/usuario/listar?info=1");
+        $resultado = $service->apagar($_SESSION['usuario_logado_id']);
+        header("Location: /projeto/usuario/logout");
+        
     }
     public function listarPro()
     {
@@ -120,5 +121,10 @@ class Usuario
         session_destroy(); header("Location: /projeto/");
         exit;
         
+    }
+    public function menu(){
+        $service = new UsuarioService();
+        $resultado = $service->listarId($_SESSION['usuario_logado_id']);
+        $this->template->layout("\\public\\usuario\\menu.php",$resultado);
     }
 }

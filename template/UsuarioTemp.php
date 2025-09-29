@@ -13,7 +13,7 @@ class UsuarioTemp implements ITemplate
         
 
     echo "<nav>"; 
-    echo "Cabeçalho - Bem-vindo(a), " .$nome_usuario;
+    echo "Cabeçalho - Bem-vindo(a), " .$nome_usuario.'<a class="button-usuario" href="/projeto/usuario/menu">Menu</a>';
     echo "</nav>";
     echo "<main>";
     }

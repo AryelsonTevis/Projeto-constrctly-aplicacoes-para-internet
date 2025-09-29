@@ -61,10 +61,21 @@ class UsuarioDAO extends MysqlFactory implements IUsuarioDAO
     }
     public function apagar($id)
     {
-        $sql = "delete from usuarios where usuario_id = :usuario_id";
-        $param = [
-            ":usuario_id" => $id
-        ];
+        $sql = "delete from task where fk_comodos in (select id_comodo from comodos where fk_casa in (select casa_id from casas where fk_proprietario in (select proprietario_id from proprietarios where fk_usuarios = :id)))";
+        $param=[":id"=>$id];
+        $retorno = $this->banco->executar($sql,$param);
+        $sql = "delete from comodos where fk_casa in (select casa_id from casas where fk_proprietario in (select proprietario_id from proprietarios where fk_usuarios = :id))";
+        $param=[":id"=>$id];
+        $retorno = $this->banco->executar($sql,$param);
+        $sql = "delete from casas where fk_proprietario in (select proprietario_id from proprietarios where fk_usuarios = :id)";
+        $param=[":id"=>$id];
+        $retorno = $this->banco->executar($sql,$param);
+        $sql = "delete from proprietarios where fk_usuarios = :id";
+        $param=[":id"=>$id];
+        $retorno = $this->banco->executar($sql,$param);
+        
+        $sql = "delete from usuarios where usuarios.usuario_id = :id";
+        $param = [":id" => $id];
         $retorno = $this->banco->executar($sql, $param);
         return $retorno;
     }
